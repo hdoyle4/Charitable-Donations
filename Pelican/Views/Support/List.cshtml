@@ -1,0 +1,32 @@
+﻿@model IEnumerable<Support>
+
+    <center>
+        <h2>Contact Customer Support</h2>
+        <div><br /><br /><br /><br /><br />
+            
+             <form action="" method="get" class="form-example">
+                 <div class="form-example">
+                     <label for="email">Enter your email: </label>
+                     <input type="email" name="email" id="email" required>
+                 </div><br />
+                 <h5>What is your issue?</h5>
+                 <select for="Reason" class="form-control">
+                     <option value="Didnt receive keys">Didnt receive keys</option>
+                     <option value="Account/Registration Problem">Account/Registration Problem</option>
+                     <option value="Incorrect Order">Incorrect Order</option>
+                     <option value="Other">Other</option>
+                 </select><br />
+                 <div class="form-example">
+                     <label for="ProblemDescription">Other:</label>
+                     <textarea type="text" name="name" id="name"></textarea>
+                 </div><br>
+
+
+
+                 <div class="form-example">
+                     <input type="submit" value="Submit Support Request" class="btn btn-info btn-sm" asp-action="Submitted">
+                 </div>
+             </form>
+    </div>
+
+    </center>

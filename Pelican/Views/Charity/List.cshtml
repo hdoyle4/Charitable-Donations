@@ -1,0 +1,64 @@
+﻿@model IEnumerable<Charity>
+    <center><h1>Donate to Charity</h1><br /></center>
+@foreach (var p in Model)
+{
+    <div class="card m-3 rounded">
+        <div class="card-block m-2">
+            <div class="card-body">
+                <h3 class="card-title">
+                    <strong>@p.Name</strong>
+                </h3>
+
+                <p class="card-text lead">
+                    @p.Description
+                </p>
+
+                <span class="float-left bg-primary text-white rounded m-2 p-1">
+                    Total Donations: @p.TotalDonations.ToString("c")
+                </span>
+
+                <label for="quantity">Please enter a donation amount:</label>
+                <input type="number" id="amount" name="amount" min="0" max="10000" />
+                <a asp-action="Submitted" class="btn btn-info btn-sm float-right">Donate Now</a>
+
+            </div>
+        </div>
+    </div>
+
+
+    /*
+     * <form id="@p.ProductID" asp-action="AddToCart"
+                      asp-controller="Cart" method="post" class="float-right m-2 p-1">
+                <input type="hidden" asp-for="CharityID" />
+                <input type="hidden" name="returnUrl" 
+                       value="@ViewContext.HttpContext.Request.PathAndQuery()" />
+                <button type="submit" class="btn btn-info btn-sm float-right">
+                    Add To Cart                 
+                    </button>             
+                </form>
+     */
+
+
+
+    /*
+     * <h3>
+                <strong>@p.Name</strong>
+                <span class="float-right bg-success text-white rounded m-2 p-1">
+                    Total Donations:@p.TotalDonations.ToString("c")
+                </span>
+            </h3>
+            <span class="lead">@p.Description</span>
+     * 
+     * 
+     */
+
+
+
+
+
+    /*<div>
+        <h3>@p.Name</h3>
+        @p.Description
+        <h4>Total Donations:@p.TotalDonations.ToString("c")</h4>
+    </div>*/
+}
